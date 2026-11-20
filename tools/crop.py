@@ -1,6 +1,9 @@
 import sys, json
 from PIL import Image
-S='/tmp/claude-0/-home-user/6c9a3f98-5f8a-5ea0-99c2-e9389476a124/scratchpad/'
+import os
+# Folder holding the PDF page renders (full-1.png ... full-5.png), made with:
+#   pdftoppm -r 144 -png portfolio.pdf <folder>/full
+S=os.environ.get('RENDERS_DIR', '.').rstrip('/') + '/'
 crops = {
  'me':          (1,(158,1077,469,1544)),
  'tti-hero':    (2,(0,0,1600,755)),
