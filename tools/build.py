@@ -54,7 +54,7 @@ def footer():
     return f'''<footer class="footer" id="contact"><div class="wrap">
   <div class="footer-grid">
     <div>
-      <h2>Let’s build something <em>clear</em> together.</h2>
+      <h2>Let’s build <em>clear</em>, useful products together.</h2>
       <p>Open to Senior UX/UI and Product Design roles. I usually reply within a day.</p>
       <p style="margin-top:24px;display:flex;gap:12px;flex-wrap:wrap">
         <a class="btn" href="mailto:{EMAIL}">Email me</a>
@@ -87,14 +87,14 @@ def img(name, alt, prefix, w, h, cls="figure", lazy=True, caption=None):
             f'sizes="(max-width: 1120px) 100vw, 1120px" width="{w}" height="{h}" alt="{alt}"{l}>{cap}</figure>')
 
 PROJECTS = [
- dict(slug="tti-annual-review", title="TTI Annual Review 2022", group=1, kicker="Corporate website · 2022–2023",
-      blurb="A slide-scrolling website that turns a dense annual report into an interactive story.", thumb="tti-circle"),
- dict(slug="signage-platform", title="Signage Manage Platform", group=1, kicker="Internal web platform · 2024–Now",
-      blurb="Replaced an email-based ordering process for factories, cutting request cycles from ~1 month to under 1 week.", thumb="sig-hero"),
- dict(slug="conta-agency", title="CONTA Agency Website", group=2, kicker="Agency website · Healthcare",
-      blurb="A bold, high-tech website for a creative agency serving the healthcare sector.", thumb="conta-hero"),
- dict(slug="design-system", title="Personal Design System", group=2, kicker="Design system · Figma",
-      blurb="Color, typography, iconography and component library built for scale and consistency.", thumb="ds-hero"),
+ dict(slug="signage-platform", title="Signage Management Platform", group=1, kicker="01 · TTI · 2024–Now",
+      blurb="Internal tool replacing an email-based ordering process for factories.", thumb="sig-hero"),
+ dict(slug="tti-annual-review", title="TTI Annual Review 2022", group=1, kicker="02 · TTI · 2022–2023",
+      blurb="Interactive annual report website that turns a static report into a story.", thumb="tti-circle"),
+ dict(slug="conta-agency", title="CONTA Agency Website", group=2, kicker="03 · Agency website",
+      blurb="Brand website for a creative agency serving the healthcare sector.", thumb="conta-hero"),
+ dict(slug="design-system", title="Personal Design System", group=2, kicker="04 · Personal",
+      blurb="Tokens, components and patterns for product UI.", thumb="ds-hero"),
 ]
 SIZES = {}
 
@@ -153,8 +153,8 @@ def home():
       <p class="role-label">Senior UX/UI Designer</p>
       <h2 class="name">Vo Dang<br>Hong Duc</h2>
       <h3 class="label">About me</h3>
-      <p>I’m a Senior UX/UI Designer with 5 years of experience simplifying complex workflows into intuitive products, contributing from structure to execution.</p>
-      <p>Short term, I aim to take greater ownership in end-to-end product design. Long term, I’m working toward becoming a design lead, shaping product direction and scalable experiences.</p>
+      <p>I’m a Senior UX/UI Designer with 5 years of experience turning complex workflows into clear, usable products, from internal enterprise tools to corporate websites and design systems.</p>
+      <p><b>Focus:</b> Internal tools &amp; workflows · Corporate web experiences · Design systems</p>
     </div>
   </div>
   <div class="facts">
@@ -163,7 +163,7 @@ def home():
       <li>{ICON['mail']}<a href="mailto:{EMAIL}">{EMAIL}</a></li>
       <li>{ICON['pin']}Ho Chi Minh City, Viet Nam</li></ul></div>
     <div class="reveal"><h3 class="label">Skills</h3><ul class="dot">
-      <li>User-Centered Design</li><li>Wireframing &amp; Prototyping</li><li>Design Systems</li><li>Social Media Design</li></ul></div>
+      <li>User-Centered Design</li><li>Wireframing &amp; Prototyping</li><li>Design Systems</li><li>Interaction Design</li><li>Stakeholder Collaboration</li></ul></div>
     <div class="reveal"><h3 class="label">Tools</h3><div class="tools">{tools_html}</div></div>
   </div>
 </div></section>
@@ -192,31 +192,30 @@ def tti():
 <div class="cs-hero"><img src="../img/tti-hero.webp" srcset="../img/tti-hero-sm.webp 800w, ../img/tti-hero.webp 1600w" sizes="100vw" width="{s['tti-hero'][0]}" height="{s['tti-hero'][1]}" alt="TTI Annual Review 2022 website on a laptop" fetchpriority="high"></div>
 <div class="wrap cs-head">
   <a class="back" href="../index.html#work">← All work</a>
+  <p class="kicker-line">02 · Techtronic Industries (TTI)</p>
   <h1>TTI Annual Review 2022</h1>
-  <p class="lede">Designed as a slide-scrolling website, the 2022 Annual Review showcases the company’s key accomplishments over the year.</p>
+  <p class="lede">Turning a static annual report into an interactive story.</p>
   <a class="live" href="https://2022review.ttigroup.com" target="_blank" rel="noopener">2022review.ttigroup.com ↗</a>
   {meta([("Output Type","Website · UI Design"),("Timeline","Oct 2022 – Mar 2023"),("My Role","UX/UI Designer"),("Tool Used","Figma")])}
 </div>
 <div class="wrap">{img('tti-circle','Annual review navigation wheel shown on a laptop',P,*s['tti-circle'])}</div>
 
 <section class="cs-section"><div class="wrap">
-  <h2>Layout &amp; Interaction</h2>
-  <p>A slide-scrolling interaction was applied to create a sense of progression across sections.</p>
-  <p>Modular layouts allowed flexibility when presenting different types of content, from statistics to brand showcases. Transitions were kept subtle to support the content rather than distract from it.</p>
+  <h2>Slide-scrolling to give a long report a sense of progress</h2>
+  <p><b>Challenge:</b> present a year of results, brands and sustainability data without overwhelming readers.</p>
+  <p>Each section is a full-screen slide, so readers always know where they are in the story. Modular layouts handle very different content, from financial figures to brand showcases. Transitions stay subtle so the content leads.</p>
   {img('tti-layout','Overview of modular slide layouts',P,*s['tti-layout'],cls="figure flat")}
 </div></section>
 
 <section class="cs-section"><div class="wrap split rev">
   <div>{img('tti-content','Powerful Brands section on a laptop',P,*s['tti-content'],cls="figure flat")}</div>
-  <div class="reveal"><h2>Content &amp; Data</h2>
-  <p>Content hierarchy was structured so key messages stand out within a dense amount of information. Visual direction stayed close to the brand identity while improving readability and the digital experience.</p>
-  <p>Multiple layout explorations were tested to find the right balance between corporate tone and modern interaction.</p></div>
+  <div class="reveal"><h2>Content hierarchy</h2>
+  <p>Key messages are surfaced first in each slide; supporting data sits one level down. The visual direction follows TTI’s brand while reading better on screen than the print report.</p></div>
 </div></section>
 
 <section class="cs-section"><div class="wrap split">
-  <div class="reveal"><h2>Refinement &amp; Impact</h2>
-  <p>Attention to detail was applied across components to ensure consistency and usability. Each screen was refined to stay clear across resolutions, and micro-adjustments in spacing and typography improved overall readability.</p>
-  <p>The final design communicates corporate performance in a more engaging way, turning static reporting into an interactive storytelling journey.</p></div>
+  <div class="reveal"><h2>Details that hold up on every screen</h2>
+  <p>I refined spacing, type and components for consistency across resolutions, from 13-inch laptops to large monitors.</p></div>
   <div>{img('tti-refine','Brand pages for Milwaukee shown in perspective',P,*s['tti-refine'],cls="figure flat")}</div>
 </div></section>
 
@@ -227,56 +226,70 @@ def tti():
 
 def signage():
     s = SIZES
-    return head("Signage Manage Platform — Shuu Portfolio", "Case study: an internal web platform that simplifies signage ordering for factories.", P) + f'''
+    return head("Signage Management Platform — Shuu Portfolio", "Case study: turning a month-long email chain into a self-serve signage ordering platform for factories.", P) + f'''
 <main>
-<div class="cs-hero"><img src="../img/sig-hero.webp" srcset="../img/sig-hero-sm.webp 800w, ../img/sig-hero.webp 1600w" sizes="100vw" width="{s['sig-hero'][0]}" height="{s['sig-hero'][1]}" alt="Signage Manage Platform cover" fetchpriority="high"></div>
+<div class="cs-hero"><img src="../img/sig-hero.webp" srcset="../img/sig-hero-sm.webp 800w, ../img/sig-hero.webp 1600w" sizes="100vw" width="{s['sig-hero'][0]}" height="{s['sig-hero'][1]}" alt="Signage Management Platform cover" fetchpriority="high"></div>
 <div class="wrap cs-head">
   <a class="back" href="../index.html#work">← All work</a>
-  <h1>Signage Manage Platform</h1>
-  <p class="lede">A web platform that simplifies the signage ordering process for factories.</p>
-  {meta([("Output Type","Internal Platform"),("Timeline","Jun 2024 – Now"),("My Role","UX/UI Designer"),("Tool Used","Figma")])}
+  <p class="kicker-line">01 · Techtronic Industries (TTI)</p>
+  <h1>Signage Management Platform</h1>
+  <p class="lede">Turning a month-long email chain into a self-serve ordering platform for factories.</p>
+  {meta([("Output Type","Internal web platform"),("Timeline","Jun 2024 – Now"),("My Role","UX/UI Designer"),("Tool Used","Figma")])}
   <div class="impact reveal">
-    <div><strong>~1 month → &lt;1 week</strong>Request cycle time</div>
-    <div><strong>Fewer errors</strong>Less miscommunication between factories and branding</div>
-    <div><strong>On-time delivery</strong>Higher rate of signage delivered on schedule</div>
+    <div><strong>Problem</strong>Factory managers ordered signage by email. Requests took up to a month and nobody could see their status.</div>
+    <div><strong>My role</strong>UX/UI designer, end to end: stakeholder discovery, flows, wireframes, UI and handoff.</div>
+    <div><strong>Goal</strong>Cut the request cycle from ~1 month to under 1 week, with consistent branding across all sites.</div>
   </div>
 </div>
 
 <section class="cs-section"><span class="ghost" aria-hidden="true">01</span><div class="wrap split">
-  <div><h2>Project Overview</h2>
-  <p>The Internal Signage Ordering Platform replaces the manual email process factory managers used to request signage. It streamlines request submission, design collaboration and task tracking.</p>
-  <p>It supports both template-based and custom signage, giving factories more control while helping the branding team stay organized. The result is a better cross-department workflow and consistent branding across all locations.</p></div>
+  <div><h2>A simple sign took up to a month to order</h2>
+  <p>Factory managers emailed the branding team for every new sign. Each request bounced between factory, branding team and printing vendors, with no shared place to track it.</p>
+  <p>Direct user research wasn’t possible, so I worked from stakeholder interviews and recurring issues reported to management.</p></div>
   <div>{img('sig-signs','Example exit and no-smoking signs',P,*s['sig-signs'],cls="figure flat")}</div>
 </div></section>
 
-<section class="cs-section"><span class="ghost" aria-hidden="true">02</span><div class="wrap">
-  <h2>Problem Statement</h2>
-  <p>Factory managers submitted signage requests via email, which led to long communication loops and poor tracking. The branding team, responsible for visual consistency, struggled to manage requests, monitor design delivery and coordinate with multiple printing vendors.</p>
+<section class="cs-section"><div class="wrap">
   {img('sig-process','Current 8-step email-based signage process',P,*s['sig-process'],cls="figure flat")}
-  {img('sig-pain','Five pain points: lack of visibility, delayed timelines, inefficient vendor management, inconsistent branding, difficulty prioritizing',P,*s['sig-pain'],cls="figure flat")}
-</div></section>
-
-<section class="cs-section"><span class="ghost" aria-hidden="true">03</span><div class="wrap">
-  <h2>Proposed Solution</h2>
-  <p>Direct user research wasn’t feasible due to internal limitations, so I worked with indirect feedback from stakeholders and recurring issues reported to management. I prioritized key pain points, mapped success metrics, and proposed features for both factory managers and the branding team.</p>
-  {img('sig-goals','Goals and success metrics',P,*s['sig-goals'],cls="figure flat")}
-  <h3>Key features</h3>
+  <h3>Pain points</h3>
   <ul class="features">
-    <li><b>Signage Templates:</b> pre-approved designs ready for quick ordering</li>
-    <li><b>Custom Design Tool:</b> managers can propose layouts online</li>
-    <li><b>Auto Task Creation:</b> tasks sync to the PM tool for tracking</li>
-    <li><b>Admin Dashboard:</b> branding team can filter, review and assign requests</li>
-    <li><b>Cart:</b> multiple signage requests, reviewed and edited before placing</li>
-    <li><b>Order Management:</b> track progress and details of each request in real time</li>
-    <li><b>Vendor Pool Management:</b> choose from a curated list of trusted vendors</li>
+    <li><b>No visibility:</b> managers couldn’t see request status.</li>
+    <li><b>Slow turnaround:</b> up to a month per sign.</li>
+    <li><b>Vendor chaos:</b> no record of which vendor handled which order.</li>
+    <li><b>Inconsistent branding:</b> no templates, so quality and style varied.</li>
+    <li><b>No prioritization:</b> branding couldn’t sort urgent requests.</li>
   </ul>
 </div></section>
 
-<section class="cs-section"><span class="ghost" aria-hidden="true">04</span><div class="wrap">
-  <h2>Design Process</h2>
-  <p>I mapped core user flows from stakeholder input, then built low-fidelity wireframes for quick internal validation. Once flows were aligned, I moved to high-fidelity UI using our internal design system, iterating in weekly reviews with the branding team and product stakeholders.</p>
+<section class="cs-section"><span class="ghost" aria-hidden="true">02</span><div class="wrap">
+  <h2>Three goals, seven features</h2>
+  {img('sig-goals','Goals and success metrics',P,*s['sig-goals'],cls="figure flat")}
+  <h3>Key features</h3>
+  <ul class="features">
+    <li><b>Signage templates:</b> pre-approved designs ready for quick ordering</li>
+    <li><b>Custom design tool:</b> managers can propose layouts online</li>
+    <li><b>Cart with order review:</b> review and edit several signs before submitting</li>
+    <li><b>Real-time order tracking:</b> progress and details of each request</li>
+    <li><b>Admin dashboard:</b> branding team can filter, review and assign requests</li>
+    <li><b>Auto task sync:</b> tasks sync to the PM tool for tracking</li>
+    <li><b>Vendor pool management:</b> a curated list of trusted vendors</li>
+  </ul>
+</div></section>
+
+<section class="cs-section"><span class="ghost" aria-hidden="true">03</span><div class="wrap">
+  <h2>From flows to high fidelity in weekly loops</h2>
+  <p>I mapped core flows from stakeholder input, then built low-fidelity wireframes for quick internal review. Once flows were agreed, I moved to high-fidelity UI using our internal design system. Weekly reviews with the branding team and product stakeholders kept iterations short.</p>
   {img('sig-wire','Low-fidelity wireframes',P,*s['sig-wire'],cls="figure flat")}
   {img('sig-style','Style guide: Trade Gothic Next and Barlow typefaces, brand and neutral colors',P,*s['sig-style'],cls="figure flat")}
+</div></section>
+
+<section class="cs-section"><span class="ghost" aria-hidden="true">04</span><div class="wrap">
+  <h2>Ordering a sign now takes minutes, not emails</h2>
+  <ul class="features">
+    <li><b>Homepage:</b> templates and recent orders up front, so repeat requests take one click.</li>
+    <li><b>Create a sign:</b> pick a template or start custom; the preview updates live.</li>
+    <li><b>Cart &amp; checkout:</b> review and edit several signs before submitting one order.</li>
+  </ul>
   {img('sig-hifi','High-fidelity mockups: homepage, create signage flow, cart and order placement',P,*s['sig-hifi'],cls="figure flat")}
 </div></section>
 {next_link('signage-platform', P)}
@@ -289,15 +302,17 @@ def conta():
 <main>
 <div class="wrap cs-head">
   <a class="back" href="../index.html#work">← All work</a>
+  <p class="kicker-line">03 · Agency website</p>
   <h1>CONTA <span>Agency</span></h1>
-  <p class="lede">A high-tech, visually impactful website for CONTA, a creative agency serving the healthcare sector.</p>
+  <p class="lede">A bold, high-tech website for a creative agency serving the healthcare sector.</p>
   <a class="live" href="https://contamedia.vn/" target="_blank" rel="noopener">contamedia.vn ↗</a>
   {meta([("Output Type","Website · UI Design"),("Client","CONTA Media"),("My Role","UX/UI Designer"),("Tool Used","Figma")])}
 </div>
 <div class="wrap">{img('conta-hero','CONTA website pages overview',P,*s['conta-hero'],cls="figure dark")}</div>
 <section class="cs-section"><div class="wrap">
-  <h2>Bold yet clear</h2>
-  <p>As the designer, I focused on a bold yet clear layout that reflects the agency’s innovative and professional identity: dark surfaces, strong type and a single green accent to guide attention.</p>
+  <h2>Dark, sharp and confident, with one signature green</h2>
+  <p>A dark base with a single neon-green accent makes headlines and calls to action stand out. Big type (“Bold ideas. Innovative designs.”) carries the brand voice; client logos and stats build trust for healthcare buyers.</p>
+  <p><b>Pages:</b> Home · About us · Projects showcase</p>
   {img('conta-a','Homepage and About page designs',P,*s['conta-a'],cls="figure dark")}
   {img('conta-b','Projects page and footer designs',P,*s['conta-b'],cls="figure dark")}
 </div></section>
@@ -312,9 +327,16 @@ def ds():
 <div class="cs-hero"><img src="../img/ds-hero.webp" srcset="../img/ds-hero-sm.webp 800w, ../img/ds-hero.webp 1600w" sizes="100vw" width="{s['ds-hero'][0]}" height="{s['ds-hero'][1]}" alt="Personal Design System cover" fetchpriority="high"></div>
 <div class="wrap cs-head">
   <a class="back" href="../index.html#work">← All work</a>
+  <p class="kicker-line">04 · Personal</p>
   <h1>Personal Design System</h1>
-  <p class="lede">A design system, pattern library and style guide built in Figma for consistent, scalable interfaces.</p>
+  <p class="lede">A reusable foundation of tokens, components and patterns for product UI.</p>
   {meta([("Output Type","Design System"),("Scope","Foundations + Components"),("My Role","Designer"),("Tool Used","Figma")])}
+  <div class="impact reveal">
+    <div><strong>9 colors</strong>3 brand colors + 6 neutral and status colors</div>
+    <div><strong>2 typefaces</strong>Montserrat and Averta, 4 weights each</div>
+    <div><strong>6 states</strong>Buttons and text fields: default, active, filled, disabled, success, error</div>
+  </div>
+  <p class="lede" style="margin-top:24px">Every component state is defined up front, so screens are built by assembling, not redrawing.</p>
 </div>
 <section class="cs-section"><span class="ghost" aria-hidden="true">01</span><div class="wrap">
   <h2>Color</h2>
